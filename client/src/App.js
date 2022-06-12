@@ -11,7 +11,7 @@ function App() {
         <PostProvider>
          <div>
           <Routes>
-            <Route exact path="/" element={<Demo />} />
+            <Route exact path="/" element={<HomePage />} />
             <Route path="/new" element={<PostForm />} />
             <Route path="/:id" element={<PostForm />} />
             <Route path="/users/:userid" element={<UserPage/>} />

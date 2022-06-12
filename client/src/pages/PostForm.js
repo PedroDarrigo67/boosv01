@@ -5,6 +5,12 @@ import { usePosts } from "../context/postContext";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import {NavbarDemo} from '../demo/NavbarDemo';
 
 export function PostForm() {
   const { createPost, getPost, updatePost } = usePosts();
@@ -29,15 +35,17 @@ export function PostForm() {
   }, [params.id, getPost]);
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="bg-zinc-800 p-10 shadow-md shadow-black">
-        <header className="flex justify-between items-center py-4 text-white">
-          <h3 className="text-xl">New Post</h3>
-          <Link to="/" className="text-gray-400 text-sm hover:text-gray-300">
-            Go Back
-          </Link>
-        </header>
-        <Formik
+     <div>
+     <NavbarDemo/>
+      <Container>
+        <Row>
+          <Col sm={4}>
+            <Link to="/" className="text-gray-400 text-sm hover:text-gray-300">
+              Volver a Menu Principal
+            </Link>
+          </Col>  
+          <Col>
+         <Formik
           initialValues={post}
           enableReinitialize
           validationSchema={Yup.object({
@@ -58,77 +66,95 @@ export function PostForm() {
         >
           {({ setFieldValue, isSubmitting, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
-              <label
-                htmlFor="title"
-                className="text-sm block font-bold mb-2 text-gray-400"
-              >
-                Title
-              </label>
+              
+
+              <div className="static-modal">
+            <Modal.Dialog>
+
+
+          <Modal.Body>
+                  <label htmlFor="description"> Denominacion </label>
+          </Modal.Body>
+
+          <Modal.Body>
               <Field
-                className="px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full"
                 placeholder="Post title"
                 name="title"
-                // autoFocus
-              />
+                />
               <ErrorMessage
                 component="p"
                 name="title"
                 className="text-red-400 text-sm"
-              />
-
-              <label
-                htmlFor="description"
-                className="text-sm block font-bold mb-2 text-gray-400"
+                />
+          </Modal.Body>
+          <Modal.Body>
+            <label
+              htmlFor="description"
               >
-                Description
-              </label>
-              <Field
-                component="textarea"
-                name="description"
-                id="description"
-                placeholder="Write a description"
-                rows="3"
-                className="px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full"
-              />
-              <ErrorMessage
-                component="p"
-                name="description"
-                className="text-red-400 text-sm"
-              />
+              Description
+            </label>      
+          </Modal.Body>            
+          <Modal.Body> 
+            <Field
+              component="textarea"
+              name="description"
+              id="description"
+              placeholder="Write a description"
+              rows="3"
+            />
+            <ErrorMessage
+              component="p"
+              name="description"
+              className="text-red-400 text-sm"
+            />          
+          </Modal.Body>            
+          <Modal.Body>
+            <label
+              htmlFor="image"
+            >
+              Image
+            </label>
+          </Modal.Body>            
+          <Modal.Body>
+            <input
+              type="file"
+              name="image"
+              onChange={(e) => setFieldValue("image", e.target.files[0])}
+            />
+            <ErrorMessage
+              component="p"
+              name="image"
+            />     
+          </Modal.Body>
 
-              <label
-                htmlFor="image"
-                className="text-sm block font-bold mb-2 text-gray-400"
-              >
-                Image
-              </label>
-              <input
-                type="file"
-                name="image"
-                className="px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full"
-                onChange={(e) => setFieldValue("image", e.target.files[0])}
-              />
-              <ErrorMessage
-                component="p"
-                name="image"
-                className="text-red-400 text-sm"
-              />
-
-              <button
-                type="submit"
-                className="bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded mt-2 text-white focus:outline-none disabled:bg-indigo-400"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <AiOutlineLoading3Quarters className="animate-spin h-5 w-5" />
-                ) : (
-                  "save"
-                )}
-              </button>
-            </Form>
+        <Modal.Footer>
+          <Button 
+            bsStyle="primary"
+            type="submit"
+            disabled={isSubmitting}
+            >
+            {isSubmitting ? (
+                      <AiOutlineLoading3Quarters className="animate-spin h-5 w-5" />
+                    ) : (
+                    "save"
+                    )}
+            </Button>
+        </Modal.Footer>
+        </Modal.Dialog>
+        </div>;                 
+        </Form>
           )}
         </Formik>
-      </div>
+        
+
+
+
+
+        </Col>
+        </Row>
+        </Container>
+
+
     </div>
   );
 }

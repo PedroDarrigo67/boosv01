@@ -11,7 +11,7 @@ import { PostCard} from '../components/PostCard'
 
 import {NavbarDemo} from './NavbarDemo';
 import { CardDemo } from './CardDemo';
-// import image1 from '../image/cordoba.gif'
+// import {image1} from '../image/cordoba.gif'
 
 export function Demo() {
   const { posts } = usePosts();
@@ -23,7 +23,7 @@ export function Demo() {
         <Row className="px-4 my-5">
           <Col sm={7}>   
           <Image 
-              src='https://picsum.photos/420/320?gray'
+              href="../image/cordoba.gif"
               responsive 
               fluid
               rounded />         
