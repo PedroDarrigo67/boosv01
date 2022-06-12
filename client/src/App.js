@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { HomePage, NotFoundPage, PostForm, UserPage} from "./pages";
+import { HomePage, NotFoundPage, PostForm, UserPage, Demo} from "./pages";
 import { PostProvider } from "./context/postContext";
 import './App.css'
 
@@ -11,7 +11,7 @@ function App() {
         <PostProvider>
          <div>
           <Routes>
-            <Route exact path="/" element={<HomePage />} />
+            <Route exact path="/" element={<Demo />} />
             <Route path="/new" element={<PostForm />} />
             <Route path="/:id" element={<PostForm />} />
             <Route path="/users/:userid" element={<UserPage/>} />
