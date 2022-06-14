@@ -1,3 +1,19 @@
 https://getbootstrap.com/docs/5.0/utilities/sizing/
 https://react-bootstrap-v3.netlify.app/
 https://www.youtube.com/watch?v=l2131Rok8XU
+
+logueo
+https://www.positronx.io/build-react-login-sign-up-ui-template-with-bootstrap-4/
+
+Autenticacion
+https://www.youtube.com/watch?v=sTJaHQINpTc
+
+logueo
+https://www.youtube.com/watch?v=DRbXvN10_XA // fazt
+https://www.youtube.com/watch?v=1rgeO_EbSGg // mejor
+
+deploy react, node en heroku app
+https://dev.to/nburgess/creating-a-react-app-with-react-router-and-an-express-backend-33l3
+
+problema router en heroku 
+https://stackoverflow.com/questions/41772411/react-routing-works-in-local-machine-but-not-heroku

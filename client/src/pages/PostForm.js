@@ -10,7 +10,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import {NavbarDemo} from '../demo/NavbarDemo';
+import {NavbarDemo} from '../components/NavbarDemo';
+import { useAuth0 } from "@auth0/auth0-react";
 
 export function PostForm() {
   const { createPost, getPost, updatePost } = usePosts();
@@ -40,9 +41,7 @@ export function PostForm() {
       <Container>
         <Row>
           <Col sm={4}>
-            <Link to="/" className="text-gray-400 text-sm hover:text-gray-300">
-              Volver a Menu Principal
-            </Link>
+            
           </Col>  
           <Col>
          <Formik
@@ -145,16 +144,9 @@ export function PostForm() {
         </Form>
           )}
         </Formik>
-        
-
-
-
-
-        </Col>
+          </Col>
         </Row>
         </Container>
-
-
     </div>
   );
 }

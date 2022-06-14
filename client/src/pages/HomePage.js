@@ -8,7 +8,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import { usePosts } from "../context/postContext";
 import { PostCard} from '../components/PostCard'
 
-import {NavbarDemo} from '../demo/NavbarDemo';
+import {NavbarDemo} from '../components/NavbarDemo';
 import Image1 from '../image/cordoba.png'
 
 export function HomePage() {
@@ -16,7 +16,6 @@ export function HomePage() {
   return (
     <div>    
       <NavbarDemo/>
-   
       <Container>
         <Row className="px-4 my-5">
           <Col sm={7}>   
@@ -40,34 +39,18 @@ export function HomePage() {
           <Card body  className='text-center bg-dark text-white my-2 py-2'>
             This is some text within a card body.</Card>;
         </Row>
-        
         {posts.map((post) => (
         <CardGroup>
             <PostCard key={post._id} post={post} />
         </CardGroup> ))}
-        
-
       </Container>
-
       <footer className='py-5 my-5 bg-dark'>
         <Container className='px-4'>
           <p className='text-center text-white'>
             Copyright &copy; Your website 2022
           </p>
-
-
         </Container>
-
-
-
       </footer>
-   
-    
-    
-    
-    
-    
-    
     </div>
   )
 }

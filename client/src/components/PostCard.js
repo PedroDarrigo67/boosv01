@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import { usePosts } from "../context/postContext";
 import { useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import './Card.css';
+
 import {Container, Row, Col} from 'react-bootstrap';
 
 
@@ -42,18 +42,8 @@ export function PostCard({ post }) {
           </Col>
         </Row>
       </Container>
-      
-      
-      
       </Card.Body>
-      </Card>
-      
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        
-      </Card.Body>
-
-      
+      </Card>      
     </div>
   );
 }

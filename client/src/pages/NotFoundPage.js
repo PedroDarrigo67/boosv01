@@ -3,7 +3,7 @@
 export function NotFoundPage() {
   return <div> 
   
-  hola
+  Not Found Page
   
     </div>;
 }
