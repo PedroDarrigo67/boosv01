@@ -6,7 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { usePosts } from "../context/postContext";
-import { PostCard} from '../components/PostCard'
+import { PostCard} from '../components/PostCard';
+import {Link} from 'react-router-dom'
 
 import {NavbarDemo} from '../components/NavbarDemo';
 import Image1 from '../image/cordoba.png'
@@ -16,7 +17,17 @@ export function HomePage() {
   return (
     <div>    
       <NavbarDemo/>
+      
       <Container>
+        <Row>
+          <Col>
+          <Link
+          to="/new">
+          Create Post
+        </Link>
+          </Col>
+        </Row>
+        
         <Row className="px-4 my-5">
           <Col sm={7}>   
           <Image 
