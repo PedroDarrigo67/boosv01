@@ -6,7 +6,7 @@ import { Profile } from "./components/Profile";
 import { LogoutButton } from "./components/LogoutButton";
 import {useAuth0} from '@auth0/auth0-react';
 
-import { HomePage, NotFoundPage, PostForm, Login, SignUp, LogApp} from "./pages";
+import { HomePage, NotFoundPage, PostForm, CardHome} from "./pages";
 
 function App() {
 
@@ -18,9 +18,9 @@ function App() {
             <Route exact path="/" element={<HomePage/>} />
             <Route path="/new" element={<PostForm/>} />
             <Route path="/home" element={<HomePage/>} />
+            <Route path="/posts/:id" element={<CardHome/>} />
+
             <Route path="*" element={<NotFoundPage/>} />
-
-
           </Routes>
           </div>
         </PostProvider>

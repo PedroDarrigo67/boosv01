@@ -2,12 +2,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { usePosts } from "../context/postContext";
 import { PostCard} from '../components/PostCard';
-import {Link} from 'react-router-dom'
+
 
 import {NavbarDemo} from '../components/NavbarDemo';
 import Image1 from '../image/cordoba.png'
@@ -19,17 +18,9 @@ export function HomePage() {
       <NavbarDemo/>
       
       <Container>
-        <Row>
-          <Col>
-          <Link
-          to="/new">
-          Create Post
-        </Link>
-          </Col>
-        </Row>
-        
+                
         <Row className="px-4 my-5">
-          <Col sm={7}>   
+          <Col sm={6}>   
           <Image 
               src={Image1}
               responsive 
@@ -43,12 +34,12 @@ export function HomePage() {
               lectus penatibus, sed aliquam id per eleifend interdum 
               dapibus. Commodo convallis nullam per diam, mi etiam nisl. 
             </p>  
-            <Button variant='outline-primary'> Presione para seguir </Button>            
+                        
           </Col>
         </Row>
         <Row>
-          <Card body  className='text-center bg-dark text-white my-2 py-2'>
-            This is some text within a card body.</Card>;
+          <Card body  className='text-center bg-dark text-white my-1 py-1'>
+            Presione la tarjeta de cada propiedad para ver toda la informacion de la publicacion</Card>
         </Row>
         {posts.map((post) => (
         <CardGroup>

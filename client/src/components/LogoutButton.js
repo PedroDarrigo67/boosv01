@@ -9,7 +9,7 @@ import {Button} from 'react-bootstrap';
         onClick={() => logout()}
         id="qsLoginBtn"
         variant="primary"
-        ClassName="btn-margin"
+        className="btn-margin"
         >
           LogOut
         </Button>

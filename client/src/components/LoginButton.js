@@ -9,7 +9,7 @@ export function LoginButton() {
         onClick={() => loginWithRedirect()}
         id="qsLoginBtn"
         variant="primary"
-        ClassName="btn-margin"
+        className="btn-margin"
         >
           LogIn
         </Button>

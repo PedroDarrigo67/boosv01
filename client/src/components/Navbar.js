@@ -21,15 +21,15 @@ export function Navbarpost() {
         <Navbar.Brand href="#">Navbar</Navbar.Brand>
       </Container>
 
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../pages/HomePage.js">Home</a>
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="../pages/HomePage.js">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../pages/PostForm.js">Nueva Publicacion</a>
+        <li className="nav-item">
+          <a className="nav-link" href="../pages/PostForm.js">Nueva Publicacion</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Login</a>
         </li>
       
       </ul>  

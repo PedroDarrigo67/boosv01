@@ -41,10 +41,15 @@ export const PostProvider = ({ children }) => {
     }
   };
 
+
+  
   const getPost = async (id) => {
     try {
       const res = await getPostRequest(id);
+      
       return res.data;
+          
+
     } catch (error) {
       console.error(error);
     }
